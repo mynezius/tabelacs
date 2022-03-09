@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela INFO</title>
+    <link rel="stylesheet"  href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Tabela:</h1>
+    </header>
+    
+    <div class="secao">
+        <div class="nome">
+            <label>Nome:</label>
+            <input type="text" name="" id="nome" placeholder="Digite seu nome">
+        </div>
+
+        <div class="peso">
+            <label>Peso:</label>
+            <input type="number" name="" id="peso" placeholder="Digite seu peso">
+            
+        </div>
+            
+        <div class="altura">
+            <label>Altura (Use vírgula):</label>
+            <input type="number" name="" id="altura" placeholder="Digite sua altura">
+        </div>
+        
+        <div class="botao">
+            <input type="button" id="botao" value="Registrar">
+        </div>
+
+        <div>
+            <table>
+                <thead>
+                <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Peso</th>
+                <th>Altura</th>
+                <th>IMC</th>
+                <th>Limpar</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+<script>
+
+    document.querySelector('#botao').onclick=function(){
+    var num= 0
+    num=num+1
+    var nome=document.getElementById('nome').value
+
+    var peso=document.getElementById('peso').value
+    peso=parseFloat(peso)
+    var altura=document.getElementById('altura').value
+    altura=parseFloat(altura)
+
+    var tbody=document.querySelector('tbody')
+    var tr=document.createElement('tr')
+
+    var th=document.createElement('th')
+    th.append(num)
+
+    var th2=document.createElement('th')
+    th2.append(nome)
+
+    var th3=document.createElement('th')
+    th3.append(peso)
+
+    var th4=document.createElement('th') 
+    th4.append(altura)
+
+    var th5=document.createElement('th')
+    var imc=((peso/(altura*altura)).toFixed(2))
+
+    if(imc<18.5){
+        th5.append(`${imc} Abaixo do peso`)
+    }
+
+    else if(imc>=18.5 && imc<=24.9){
+        th5.append(`${imc} Peso normal`)
+    }
+
+    else if(imc>=25 && imc<=29.9){
+        th5.append(`${imc} Sobrepeso`)
+    }
+
+    else if(imc>=30 && imc<=34.9){
+        th5.append(`${imc} Obesidade Grau 1`)
+    }
+
+    else if(imc>=35 && imc<=39.9){
+        th5.append(`${imc} Obesidade Grau 2`)
+    }
+
+    else{
+        th5.append(`${imc} Obesidade mórbida`)
+    }
+
+    tr.append(th)
+    tr.append(th2)
+    tr.append(th3)
+    tr.append(th4)
+    tr.append(th5)
+    tbody.append(tr)
+    
+}
+
+</script>
+</html>

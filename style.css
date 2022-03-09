@@ -1,0 +1,63 @@
+*{
+    margin:0;
+    padding:0
+}
+body{
+    background-color: #005A5B;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    margin:45px;
+}
+header{
+    text-align: center;
+    color:white;
+    padding: 8px;
+}
+
+.secao{
+    background-color: rgba(141, 17, 190, 0.651);
+    border-radius: 10px;
+    padding: 15px;
+    width: 400px;
+    margin: auto;
+    text-align: center;
+}
+
+.nome{
+    text-align: center;
+    border-radius:8px;
+    padding:8px;
+    margin-top:10px;
+}
+
+.peso{
+    text-align: center;
+    border-radius:8px;
+    padding:8px;
+    margin-top:10px;
+    
+}
+
+.altura{
+    text-align: center;
+    border-radius:8px;
+    padding:8px;
+    margin-top:10px;
+}
+
+.botao{
+    text-align: center;
+    padding:8px;
+    margin-top:10px;
+}
+
+table, th, td{
+    border:1px #000 solid;
+    border-collapse: collapse;
+    margin-top: 10px;
+    width: 400px;
+}
+
+thead{
+    background-color: #3272d3;
+}
